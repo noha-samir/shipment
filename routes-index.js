@@ -26,24 +26,8 @@ router.use(function (req, res, next) {
 
 router.use(function (req, res, next) {
     next();
-    //Authentication logic
-    // if (req.url == "/v1/user/login" || req.url == "/v1/user/signup") {
-    //     next();
-    // } else {
-    //     var token = req.headers['x-access-token'];
-    //     if (!token) {
-    //         res.status(403).send({ auth: false, message: 'No token provided.' });
-    //     }
-    //     else {
-    //         UserController.verifyToken(token, function (err, aUser) {
-    //             req.user = aUser;
-    //             next(err);
-    //         });
-    //     }
-    // }
 });
 
 //All APIs
-router.use('/v1/products', require('./app/routes/product-router'));
-router.use('/v1/categories', require('./app/routes/category-router'));
+router.use('/v1/shipments', require('./app/routes/shipment-router'));
 module.exports = router;

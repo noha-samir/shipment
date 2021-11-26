@@ -27,20 +27,6 @@ app.use((req, res, next) => {
  */
 
 app.use((error, req, res, next) => {
-
-    if (error.sqlMessage) {
-        
-        error.status = 400;
-        error.code = "DATABASE_ERROR";
-        error.developerMessage = " state " + error.sqlState + " errno " + error.errno + " msg " + error.sqlMessage;
-        error.message = "Something went wrong..";
-
-    }else if(error.code == "EBUSY"){
-        error.message = "Server is busy during hashing(renaming) the file , Please try again...";
-    }else if(error.code == "EPERM"){
-        error.message = "This operation is not permitted yet , Please try again...";
-    }
-
     res.status(error.status || 400);
     res.json({
         "custom-error-code": error.code,

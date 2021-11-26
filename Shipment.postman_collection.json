@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "ecb06967-6c83-482d-84f7-da2813982594",
+		"name": "Shipment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create shipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/shipments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"shipments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
